@@ -13,6 +13,8 @@ import java.io.IOException;
 public class AudioPlayer {
 
     public String asset;
+    MediaPlayer mp = new MediaPlayer();
+
 
     public String getAsset() {
         return asset;
@@ -22,11 +24,10 @@ public class AudioPlayer {
         this.asset = asset;
     }
 
-    public static void playAudio(String asset, Context c){
-        final MediaPlayer mp = new MediaPlayer();
+    public void playAudio(String asset, Context c) {
 
-        if(mp.isPlaying())
-        {
+
+        if (mp.isPlaying()) {
             mp.stop();
         }
 
@@ -34,7 +35,7 @@ public class AudioPlayer {
             mp.reset();
             AssetFileDescriptor afd;
             afd = c.getAssets().openFd(asset);
-            mp.setDataSource(afd.getFileDescriptor(),afd.getStartOffset(),afd.getLength());
+            mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
             mp.prepare();
             mp.start();
             mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -54,4 +55,12 @@ public class AudioPlayer {
 
 
     }
+    public void stopAudio(){
+        if(mp.isPlaying())
+        {
+            mp.stop();
+            mp.reset();
+        }
+    }
 }
+

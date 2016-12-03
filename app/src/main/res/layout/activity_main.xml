@@ -9,66 +9,129 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.gts.aarongoodman.kabukisoundboard.MainActivity"
-    android:id="@+id/kabukiButton">
+    android:id="@+id/kabukiLayout">
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="yooo"
-        android:id="@+id/yoooButton"
-        android:layout_below="@+id/taikoButton"
-        android:layout_alignLeft="@+id/taikoButton"
-        android:layout_alignStart="@+id/taikoButton"
-        android:layout_marginTop="36dp"/>
+        android:id="@+id/linearButtonLayout"
+        android:layout_centerHorizontal="true">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Taiko"
-        android:id="@+id/taikoButton"
-        android:layout_marginTop="46dp"
-        android:layout_below="@+id/tsuzumiButton"
-        android:layout_alignLeft="@+id/kabukiImageButton"
-        android:layout_alignStart="@+id/kabukiImageButton"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/clearButton"
+            android:layout_alignBaseline="@+id/titleTextView"
+            android:layout_alignBottom="@+id/titleTextView"
+            android:layout_alignLeft="@+id/titleTextView"
+            android:layout_alignStart="@+id/titleTextView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/transparent"
+            />
+    </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="flute"
-        android:id="@+id/fluteButton"
-        android:layout_below="@+id/yoooButton"
-        android:layout_alignLeft="@+id/yoooButton"
-        android:layout_alignStart="@+id/yoooButton"
-        android:layout_marginTop="40dp"/>
+        android:id="@+id/titleLayout">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tsuzumi"
-        android:id="@+id/tsuzumiButton"
-        android:layout_marginTop="38dp"
-        android:layout_below="@+id/titleTextView"
-        android:layout_alignLeft="@+id/taikoButton"
-        android:layout_alignStart="@+id/taikoButton"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="608dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Kabuki Soundboard"
+            android:id="@+id/titleTextView"
+            android:textSize="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/black"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Kabuki Soundboard"
-        android:id="@+id/titleTextView"
-        android:textSize="35dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"/>
+    </LinearLayout>
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/kabukiImageButton"
-        android:src="@drawable/demon"
-        android:background="@android:color/transparent"
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomHorizontalLayout">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/kabukiImageButton"
+            android:src="@drawable/demon"
+            android:background="@android:color/transparent"
+            android:layout_below="@+id/stopButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonsVerticaliLinearLayout"
+
+        android:layout_above="@+id/bottomHorizontalLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Taiko"
+            android:id="@+id/taikoButton"
+            android:layout_marginTop="46dp"
+            android:layout_below="@+id/tsuzumiButton"
+            android:layout_alignLeft="@+id/kabukiImageButton"
+            android:layout_alignStart="@+id/kabukiImageButton"
+            android:layout_row="5"
+            android:layout_column="0"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tsuzumi"
+            android:id="@+id/tsuzumiButton"
+            android:layout_marginTop="38dp"
+            android:layout_below="@+id/titleTextView"
+            android:layout_alignLeft="@+id/taikoButton"
+            android:layout_alignStart="@+id/taikoButton"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="flute"
+            android:id="@+id/fluteButton"
+            android:layout_below="@+id/yoooButton"
+            android:layout_alignLeft="@+id/yoooButton"
+            android:layout_alignStart="@+id/yoooButton"
+            android:layout_marginTop="40dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="yooo"
+            android:id="@+id/yoooButton"
+            android:layout_below="@+id/taikoButton"
+            android:layout_alignLeft="@+id/taikoButton"
+            android:layout_alignStart="@+id/taikoButton"
+            android:layout_marginTop="36dp"/>
+
+        <Button
+            android:text="Stop Audio"
+            android:layout_width="match_parent"
+            android:id="@+id/stopButton"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
